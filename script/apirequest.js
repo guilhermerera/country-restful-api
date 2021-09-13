@@ -51,10 +51,37 @@ capitalInput.addEventListener("change", () => {
 		});
 });
 
+window.addEventListener("load", () => {
+	regionInput.innerHTML =
+		"<option value='Region'>Region</option> <option value='World'>World</option>";
+	let url = "https://restcountries.eu/rest/v2/all";
+	fetch(url)
+		.then((res) => res.json())
+		.then((data) => {
+			let prevRegion = [""];
+			for (let i = 0; i < data.length; i++) {
+				if (prevRegion.indexOf(data[i].region) !== -1) {
+				} else {
+					prevRegion.push(data[i].region);
+				}
+			}
+			prevRegion
+				.sort(function (a, b) {
+					return a.localeCompare(b);
+				})
+				.map((region, index) => {
+					if (region == "") {
+					} else {
+						regionInput.innerHTML += `<option id=${index}value="${region}">${region}</option>`;
+					}
+				});
+		});
+});
+
 regionInput.addEventListener("change", () => {
-	subregionInput.setAttribute("class", "hide");
 	let region = regionInput.value;
 	if (region == "Region") {
+		subregionInput.setAttribute("class", "hide");
 		placeholder.innerHTML = "";
 		return;
 	}
@@ -104,10 +131,19 @@ regionInput.addEventListener("change", () => {
 			for (let i = 0; i < data[i].subregion.length; i++) {
 				if (prevSubRegion.indexOf(data[i].subregion) !== -1) {
 				} else {
-					subregionInput.innerHTML += `<option value="${data[i].subregion}">${data[i].subregion}</option>`;
 					prevSubRegion.push(data[i].subregion);
 				}
 			}
+			prevSubRegion
+				.sort(function (a, b) {
+					return a.localeCompare(b);
+				})
+				.map((subRegion, index) => {
+					if (subRegion == "") {
+					} else {
+						subregionInput.innerHTML += `<option id=${index}value="${subRegion}">${subRegion}</option>`;
+					}
+				});
 			subregionInput.addEventListener("change", () => {
 				let subRegion = subregionInput.value;
 				if (subRegion != "Subregion") {
