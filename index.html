@@ -15,7 +15,7 @@
         </nav>
     </header>
     <main>
-        <section>
+        <section id="dataInput">
             <input id="nameInput" type="text" placeholder="Country Name">
             <input id="capitalInput" type="text" placeholder="Capital City">
             <select id="regionInput">
@@ -27,19 +27,12 @@
                 <option value="Oceania">Oceania</option>
                 <option value="World">World</option>
             </select>
+            <select id="subregionInput" class="hide">
+            </select>
         </section>
         <section>
             <div id="placeholder">
-                <article>
-                    <img src="https://restcountries.eu/data/bra.svg" alt="Brazilian Flag">
-                    <p>Brazil</p>
-                    <p>Americas</p>
-                    <p>South America</p>
-                    <p>Brasília</p>
-                    <p>206135893</p>
-                    <p>Portuguese</p>
-                    <p>BRL</p>
-                </article>
+
             </div>
         </section>
     </main>
@@ -49,7 +42,9 @@
     </footer>
 
 
-    <script src="./script/script.js"></script>
+    <script src="./script/apirequest.js"></script>
+    <script src="./script/visual.js"></script>
+
 </body>
 
 </html>

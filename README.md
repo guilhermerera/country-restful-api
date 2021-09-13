@@ -5,7 +5,7 @@
 <br><br>
 
 # 🔎 Live View
-- [Live Site Link](#) - Unavaiable ATM
+- [Live Site Link](https://country-restful-api.netlify.app)
 
 <br>
 
@@ -16,8 +16,8 @@ I'm learning how to consume a RESTful API and manipulate its data to best displa
 
 # 📝 To-Do List
 🗹 First API consumption tests <br>
+🗹 Advanced Filters <br>
 ☐ Page Styling <br>
-☐ Advanced Filters <br>
 ☐ Final Theme Application <br>
 
 <br>
