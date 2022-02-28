@@ -9,7 +9,7 @@ nameInput.addEventListener("change", () => {
 	subregionInput.setAttribute("class", "hide");
 	placeholder.innerHTML = "";
 	let country = nameInput.value;
-	let url = `https://restcountries.eu/rest/v2/name/${country}`;
+	let url = `https://restcountries.com/v2/name/${country}`;
 	fetch(url)
 		.then((res) => res.json())
 		.then((data) => {
@@ -32,7 +32,7 @@ capitalInput.addEventListener("change", () => {
 	subregionInput.setAttribute("class", "hide");
 	placeholder.innerHTML = "";
 	let capital = capitalInput.value;
-	let url = `https://restcountries.eu/rest/v2/capital/${capital}`;
+	let url = `https://restcountries.com/v2/capital/${capital}`;
 	fetch(url)
 		.then((res) => res.json())
 		.then((data) => {
@@ -54,7 +54,7 @@ capitalInput.addEventListener("change", () => {
 window.addEventListener("load", () => {
 	regionInput.innerHTML =
 		"<option value='Region'>Region</option> <option value='World'>World</option>";
-	let url = "https://restcountries.eu/rest/v2/all";
+	let url = "https://restcountries.com/v2/all";
 	fetch(url)
 		.then((res) => res.json())
 		.then((data) => {
@@ -88,7 +88,7 @@ regionInput.addEventListener("change", () => {
 	if (region == "World") {
 		subregionInput.setAttribute("class", "hide");
 		placeholder.innerHTML = "";
-		let url = "https://restcountries.eu/rest/v2/all";
+		let url = "https://restcountries.com/v2/all";
 		fetch(url)
 			.then((res) => res.json())
 			.then((data) => {
@@ -109,7 +109,7 @@ regionInput.addEventListener("change", () => {
 	}
 	placeholder.innerHTML = "";
 	subregionInput.innerHTML = "";
-	let url = `https://restcountries.eu/rest/v2/region/${region}`;
+	let url = `https://restcountries.com/v2/region/${region}`;
 	fetch(url)
 		.then((res) => res.json())
 		.then((data) => {
